@@ -5,6 +5,7 @@ function searchInsert(nums: number[], target: number): number {
     while (low <= high) {
         const mid = Math.floor((low + high) / 2);
         
+        // If target is found: returns the index immediately
         if (nums[mid] === target) {
             return mid;
         }
@@ -18,3 +19,21 @@ function searchInsert(nums: number[], target: number): number {
     
     return low;
 }
+
+
+// Time Complexity: O(log n)
+// Explanation:
+
+// Binary search divides the search space in half with each iteration
+// With each comparison, we eliminate half of the remaining elements
+// For an array of size n, we need at most log₂(n) iterations
+
+
+
+// Space Complexity: O(1)
+// Explanation:
+
+// Uses only a constant amount of extra space
+// Variables used: low, high, mid (3 variables regardless of input size)
+// No recursive calls (iterative approach)
+// No additional data structures created
